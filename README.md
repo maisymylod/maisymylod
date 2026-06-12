@@ -39,8 +39,6 @@ and Postgres systems; previously data analytics at CLEAR.
 
 ---
 
-> "Of all evil I deem you capable: Therefore I want good from you. Verily, I have
-> often laughed at the weaklings who thought themselves good because they had no
-> claws."
+> "Of all evil I deem you capable: Therefore I want good from you."
 >
 > Friedrich Nietzsche, *Thus Spoke Zarathustra*
