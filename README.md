@@ -36,9 +36,3 @@ B.S. Pure Mathematics, University of Michigan. Currently building production Rai
 and Postgres systems; previously data analytics at CLEAR.
 [Website](https://maisymylod.github.io/maisy-mylod-website/) ·
 [LinkedIn](https://linkedin.com/in/maisymylod)
-
----
-
-*"Of all evil I deem you capable: Therefore I want good from you."*
-
-Friedrich Nietzsche, *Thus Spoke Zarathustra*
