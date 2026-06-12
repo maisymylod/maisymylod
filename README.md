@@ -20,13 +20,14 @@ against the live web.
 [outpost](https://github.com/maisymylod/outpost) renders one workload spec to
 cloud, on-prem, and air-gapped bare-metal, with every artifact validated by the
 real tool (terraform, helm, kubeconform, shellcheck) and byte-for-byte
-deterministic output.
+deterministic output. [slew](https://github.com/maisymylod/slew) is a 3-DOF
+spacecraft attitude-control simulator in C++: quaternion rigid-body dynamics, a
+saturating PD controller, and a fixed-rate control loop that is deterministic
+offline and reports its timing jitter in real time.
 
 **Applied ML.** [athena-ai](https://github.com/maisymylod/athena-ai) is a
 deployed classifier for AI-generated images, with real held-out evals and an
-honest model card. [nfl-moneyball](https://github.com/maisymylod/nfl-moneyball)
-is a roster-value model that retrains itself daily and is careful about missing
-data.
+honest model card.
 
 New here: start with [gauntlet](https://github.com/maisymylod/gauntlet) or
 [outpost](https://github.com/maisymylod/outpost).
@@ -35,3 +36,11 @@ B.S. Pure Mathematics, University of Michigan. Currently building production Rai
 and Postgres systems; previously data analytics at CLEAR.
 [Website](https://maisymylod.github.io/maisy-mylod-website/) ·
 [LinkedIn](https://linkedin.com/in/maisymylod)
+
+---
+
+> "Of all evil I deem you capable: Therefore I want good from you. Verily, I have
+> often laughed at the weaklings who thought themselves good because they had no
+> claws."
+>
+> Friedrich Nietzsche, *Thus Spoke Zarathustra*
