@@ -18,11 +18,11 @@ Four interoperating projects that simulate a satellite constellation's ground se
 ## Other work
 
 - [athena-ai](https://github.com/maisymylod/athena-ai) — a deployed real-vs-AI image classifier (EfficientNet-B0) served behind an API with a live demo: **0.996** accuracy and **0.9999** ROC-AUC on held-out data, a verdict in roughly **150 ms**, and an honest model card.
-- [quantlib-mm](https://github.com/maisymylod/quantlib-mm) — a quantitative-finance library on a pure-mathematics foundation: Monte Carlo simulation, option pricing, portfolio optimization, and risk metrics (VaR, CVaR, Greeks).
+- [slew](https://github.com/maisymylod/slew) — a 3-DOF spacecraft attitude-control simulator in C++20: quaternion-feedback control over real rigid-body dynamics (Euler's equations) with a saturating actuator. A default 30-degree slew settles to **0.0008-degree** final error at a 1 kHz control rate, with a bit-identical trajectory every run.
 
 ## Tech
 
-- **Languages** — Python, Go, TypeScript/JavaScript, SQL
+- **Languages** — Python, Go, C++, TypeScript/JavaScript, SQL
 - **AI / agents** — LangGraph multi-agent orchestration, MCP (servers and clients), RAG over a vector DB (pgvector), tiered Anthropic Claude model routing, PyTorch model training and evaluation
 - **Data** — Kafka / Redpanda, stream processing, TimescaleDB and time-series, anomaly detection, pandas / NumPy / scikit-learn
 - **Security** — prompt-injection / jailbreak / exfiltration red-teaming, Ed25519 signed command authentication, mutual TLS, replay protection, threat modeling
