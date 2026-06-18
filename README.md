@@ -1,38 +1,33 @@
 # Maisy Mylod
 
-Software engineer in New York with a pure mathematics background. I build LLM and
-agent systems, infrastructure tooling, and applied ML. The pinned repositories
-below are the portfolio. Each keeps its claims matched to what the code does, and
-most of them run: live demos, daily pipelines, and test suites you can execute
-offline.
+*AI and agent-systems engineer with a security focus and a pure-mathematics foundation. I build and ship LLM-based agentic systems end to end.*
 
-The work falls into three threads.
+I design multi-agent LLM systems, the data and security layers underneath them, and the infrastructure that deploys them — including to air-gapped environments. I treat security as a design property rather than a bolt-on, and I keep every claim matched to what the code does: the repositories below run, are tested, and report real numbers from actually running.
 
-**LLM safety and agents.** [gauntlet](https://github.com/maisymylod/gauntlet) is
-an adversarial test-and-defense harness that measures each defense's contribution
-against an attack corpus, offline and deterministically.
-[argus](https://github.com/maisymylod/argus) runs an LLM agent over geospatial
-tools (also served over MCP) on public satellite data.
-[truth-editor](https://github.com/maisymylod/truth-editor) verifies LLM claims
-against the live web.
+## Flagship — the Heliosnet ground system
 
-**Systems and infrastructure.**
-[outpost](https://github.com/maisymylod/outpost) renders one workload spec to
-cloud, on-prem, and air-gapped bare-metal, with every artifact validated by the
-real tool (terraform, helm, kubeconform, shellcheck) and byte-for-byte
-deterministic output. [slew](https://github.com/maisymylod/slew) is a 3-DOF
-spacecraft attitude-control simulator in C++: quaternion rigid-body dynamics, a
-saturating PD controller, and a fixed-rate control loop that is deterministic
-offline and reports its timing jitter in real time.
+Four interoperating projects that simulate a satellite constellation's ground segment: the data plane, the brains, the shield, and the deploy system. One coherent system — `liftoff` deploys the stack that `groundstation` operates over `constellation`'s telemetry, with `aegis` authenticating the command path. Each project also stands alone and runs on its own.
 
-**Applied ML.** [athena-ai](https://github.com/maisymylod/athena-ai) is a
-deployed classifier for AI-generated images, with real held-out evals and an
-honest model card.
+| Project | What it is | Real headline number |
+|---|---|---|
+| [constellation](https://github.com/maisymylod/constellation) | Telemetry data plane: streaming ingestion (Redpanda → TimescaleDB), unsupervised anomaly detection, and a React/TypeScript ops console | Anomaly detection F1 **0.720** (recall 0.808) on held-out satellites, over 180,000 streamed telemetry records |
+| [groundstation](https://github.com/maisymylod/groundstation) | Agentic mission-ops copilot: a LangGraph multi-agent graph operating the system through MCP tools and RAG-cited playbooks, with tiered model routing and a human-in-the-loop approval gate | Trained anomaly-type classifier **96.7%** accuracy, **0.931** macro-F1 (held-out satellites) |
+| [aegis](https://github.com/maisymylod/aegis) | Security layer: Ed25519 signed-command authentication (replay protection, key rotation, verifying chain), mutual TLS, and an adversarial harness with a measured defense stack | Defenses off: **11/11** attacks succeed. Defenses on: **0/11** (100% blocked) |
+| [liftoff](https://github.com/maisymylod/liftoff) | Deploy and build-reliability layer (Go): one declarative suite spec rendered for cloud, on-prem, and air-gapped bare-metal, with SLO-driven rollback | All **three** targets pass terraform, helm/kubeconform, and shellcheck, with byte-for-byte deterministic output |
 
-New here: start with [gauntlet](https://github.com/maisymylod/gauntlet) or
-[outpost](https://github.com/maisymylod/outpost).
+## Other work
 
-B.S. Pure Mathematics, University of Michigan. Currently building production Rails
-and Postgres systems; previously data analytics at CLEAR.
-[Website](https://maisymylod.github.io/maisy-mylod-website/) ·
-[LinkedIn](https://linkedin.com/in/maisymylod)
+- [athena-ai](https://github.com/maisymylod/athena-ai) — a deployed real-vs-AI image classifier (EfficientNet-B0) served behind an API with a live demo: **0.996** accuracy and **0.9999** ROC-AUC on held-out data, a verdict in roughly **150 ms**, and an honest model card.
+- [quantlib-mm](https://github.com/maisymylod/quantlib-mm) — a quantitative-finance library on a pure-mathematics foundation: Monte Carlo simulation, option pricing, portfolio optimization, and risk metrics (VaR, CVaR, Greeks).
+
+## Tech
+
+- **Languages** — Python, Go, TypeScript/JavaScript, SQL
+- **AI / agents** — LangGraph multi-agent orchestration, MCP (servers and clients), RAG over a vector DB (pgvector), tiered Anthropic Claude model routing, PyTorch model training and evaluation
+- **Data** — Kafka / Redpanda, stream processing, TimescaleDB and time-series, anomaly detection, pandas / NumPy / scikit-learn
+- **Security** — prompt-injection / jailbreak / exfiltration red-teaming, Ed25519 signed command authentication, mutual TLS, replay protection, threat modeling
+- **Infrastructure** — Terraform (EKS + GPU node groups), Helm, Kubernetes CRDs and controller-runtime operators, Docker, GitHub Actions, air-gapped and GPU deployment
+
+## Portfolio
+
+[maisymylod.github.io/maisy-mylod-website](https://maisymylod.github.io/maisy-mylod-website/)
